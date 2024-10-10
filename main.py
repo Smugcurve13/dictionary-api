@@ -10,8 +10,6 @@ def home():
 @app.route('/api/v1/<word>')
 def dictionary(word):
     defination = df.loc[df['word'] == word]['definition'].squeeze()
-
-    # defination = defination.to_json()
     return {
         'defination': defination,
         'word' : word
